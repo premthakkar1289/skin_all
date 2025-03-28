@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload a Skin Disease Image</h1>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" required>
+            <button type="submit">Predict Disease</button>
+        </form>
+
+        {% if prediction %}
+            <h2>Prediction: <strong>{{ prediction }}</strong></h2>
+            <img src="{{ image }}" alt="Uploaded Image">
+        {% endif %}
+    </div>
+</body>
+</html>
